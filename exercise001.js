@@ -11,12 +11,22 @@ const promise = new Promise((resolve, reject) => {
   }
 });
 
-// Your solution(s) to exercise001 here!
 promise.then(
-  (result) => { 
-     console.log('Yay! Promise resolved with response: ' + result);
+  (result) => {
+    console.log("Yay! Promise resolved with response: " + result);
   },
-  (error) => { 
-     console.log('Boo. Promise rejected with response: ' + error);
+  (error) => {
+    console.log("Boo. Promise rejected with response: " + error);
   }
 );
+
+const getPromiseResponse = async () => {
+  try {
+    const asyncResponse = await promise;
+
+    console.log("Yay! Promise resolved with response: " + asyncResponse);
+  } catch (error) {
+    console.log("Boo. Promise rejected with response: " + error);
+  }
+};
+getPromiseResponse();
